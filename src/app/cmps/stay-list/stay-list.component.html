@@ -1,1 +1,3 @@
-<p>stay-list works!</p>
+<section class="stay-list">
+    <stay-preview *ngfor="let stay of stays; trackBy: trackByFn; index as idx" [stay]="stay"></stay-preview>
+</section>
