@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core'
+import { Stay } from 'src/app/models/stay-model'
 
 @Component({
   selector: 'stay-preview',
@@ -6,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core'
   styleUrls: ['./stay-preview.component.scss']
 })
 export class StayPreviewComponent implements OnInit {
-  @Input() stay: Stay
+  @Input() stay!:Stay
   ngOnInit(): void {
     console.log('stay:', this.stay)
   }
