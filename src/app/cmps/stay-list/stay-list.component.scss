@@ -1,4 +1,4 @@
-.stay-list{
-    display: flex;
-    flex-wrap: wrap;
+.stay-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 }
