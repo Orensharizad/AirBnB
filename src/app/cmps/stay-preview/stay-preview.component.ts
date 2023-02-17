@@ -7,7 +7,7 @@ import { Stay } from 'src/app/models/stay-model'
   styleUrls: ['./stay-preview.component.scss']
 })
 export class StayPreviewComponent implements OnInit {
-  @Input() stay!:Stay
+  @Input() stay!: Stay
   ngOnInit(): void {
     console.log('stay:', this.stay)
   }
