@@ -12,7 +12,7 @@ import { StayPreviewComponent } from './cmps/stay-preview/stay-preview.component
     AppComponent,
     StayIndexComponent,
     StayListComponent,
-    StayPreviewComponent
+    StayPreviewComponent,
   ],
   imports: [
     BrowserModule,
