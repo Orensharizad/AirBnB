@@ -7,19 +7,23 @@ import data from '../../data.json'
 export class StayService {
 
   constructor() { }
-  key = 'stayBD'
+  KEY = 'stayBD'
   getStays(): Stay[] {
-    let stays = this.loadFromStorage(this.key)
+    let stays = this.loadFromStorage(this.KEY)
     if (!stays) {
       stays = data
-}
+      this.saveToStorage(this.KEY, stays)
+      // this.saveToStorage(this.KEY, data)
+      // stays = this.loadFromStorage(this.KEY)
+    }
+    return stays
   }
 
-  saveToStorage(key: string, value: [] | string) {
+  saveToStorage(key: string, value: any) {
     localStorage.setItem(key, JSON.stringify(value))
   }
 
-  loadFromStorage(key: string): [] | string | undefined {
+  loadFromStorage(key: string): any {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
   }
