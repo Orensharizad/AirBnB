@@ -17,6 +17,5 @@ export class StayIndexComponent implements OnInit {
   ngOnInit(): void {
     this.stayService.query()
     this.stays$ = this.stayService.stays$
-    console.log('this.stays$:', this.stays$);
   }
 }

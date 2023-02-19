@@ -11,6 +11,6 @@ export class StayPreviewComponent implements OnInit {
   @Input() stay!: Stay
 
   ngOnInit(): void {
-    console.log('stay:', this.stay)
+    // console.log('stay:', this.stay)
   }
 }
