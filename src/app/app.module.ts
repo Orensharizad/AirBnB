@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app-root/app.component';
 import { StayIndexComponent } from './views/stay-index/stay-index.component';
@@ -16,11 +15,11 @@ import { ToolBarComponent } from './cmps/tool-bar/tool-bar.component';
     StayListComponent,
     StayPreviewComponent,
     AppHeaderComponent,
-    ToolBarComponent
+    ToolBarComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
