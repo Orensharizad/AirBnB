@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core'
 import { Stay } from 'src/app/models/stay-model'
 import { UtilService } from './util.service'
 import data from '../../data.json'
-import { BehaviorSubject, of } from 'rxjs'
+import { BehaviorSubject, Observable, of } from 'rxjs'
 @Injectable({
   providedIn: 'root'
 })
@@ -31,4 +31,10 @@ export class StayService {
     this._stays$.next(stays)
     return of()
   }
+
+  public getById(stayId: string): Observable<Stay> {
+    const stays = this.utilService.loadFromStorage(this.KEY)
+    const stay = stays.find((stay: Stay) => stay._id === stayId)
+    return stay ? of({ ...stay }) : of()
+}
 }
