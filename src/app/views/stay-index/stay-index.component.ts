@@ -11,7 +11,6 @@ import { StayService } from 'src/app/services/stay.service'
 export class StayIndexComponent implements OnInit {
   constructor(private stayService: StayService) { }
 
-  stays: Stay[] = []
   stays$!: Observable<Stay[]>
 
   ngOnInit(): void {

@@ -7,6 +7,7 @@ import { StayIndexComponent } from './views/stay-index/stay-index.component';
 import { StayListComponent } from './cmps/stay-list/stay-list.component';
 import { StayPreviewComponent } from './cmps/stay-preview/stay-preview.component';
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
+import { ToolBarComponent } from './cmps/tool-bar/tool-bar.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { AppHeaderComponent } from './cmps/app-header/app-header.component';
     StayIndexComponent,
     StayListComponent,
     StayPreviewComponent,
-    AppHeaderComponent
+    AppHeaderComponent,
+    ToolBarComponent
   ],
   imports: [
     BrowserModule,
