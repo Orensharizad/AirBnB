@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core'
 import { Stay } from 'src/app/models/stay-model'
+import { Observable } from 'rxjs';
 import { StayService } from 'src/app/services/stay.service'
 
 @Component({
@@ -9,11 +10,13 @@ import { StayService } from 'src/app/services/stay.service'
 })
 export class StayIndexComponent implements OnInit {
   constructor(private stayService: StayService) { }
+
   stays: Stay[] = []
-  getStays(): void {
-    this.stays = this.stayService.getStays()
-  }
+  stays$!: Observable<Stay[]>
+
   ngOnInit(): void {
-    this.getStays()
+    this.stayService.query()
+    this.stays$ = this.stayService.stays$
+    console.log('this.stays$:', this.stays$);
   }
 }
