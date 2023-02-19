@@ -1,1 +1,6 @@
-<stay-list *ngIf="stays$" [stays]="stays$|async" (remove)="removeStay($event)"></stay-list>
+<stay-details *ngIf="selectedStayId; else indexContent" [stayId]="selectedStayId"></stay-details>
+<ng-template #indexContent>
+    <tool-bar></tool-bar>
+    <stay-list *ngIf="stays$" [stays]="stays$|async" (remove)="removeStay($event)"
+        (selectStay)="selectStay($event)"></stay-list>
+</ng-template>

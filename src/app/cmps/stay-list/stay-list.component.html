@@ -1,1 +1,2 @@
-<stay-preview *ngFor="let stay of stays; trackBy: trackByFn; index as idx" [stay]="stay" (remove)="remove.emit($event)">Hey</stay-preview>
+<stay-preview *ngFor="let stay of stays; trackBy: trackByFn; index as idx" [stay]="stay"
+ (remove)="remove.emit($event)" (selectStay)="selectStay.emit($event)">Hey</stay-preview>

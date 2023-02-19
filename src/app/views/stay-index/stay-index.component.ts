@@ -12,6 +12,7 @@ export class StayIndexComponent implements OnInit {
   constructor(private stayService: StayService) { }
 
   stays$!: Observable<Stay[]>
+  selectedStayId: string | null = null
 
   ngOnInit(): void {
     this.stayService.query()
@@ -21,5 +22,10 @@ export class StayIndexComponent implements OnInit {
   removeStay(stayId: string): void {
     console.log('stayId:', stayId);
     this.stayService.remove(stayId)
+  }
+
+  selectStay(stayId: string):void {
+    console.log('stayId: ', stayId);
+    this.selectedStayId = stayId
   }
 }

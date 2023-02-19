@@ -1,1 +1,25 @@
+<section *ngIf="stay" class="stay-details">
+    <div class="stay-title">
+        <h3> {{stay.name}}</h3>
+        <p>{{stay.loc.address}}</p>
 
+    </div>
+    <div class="imgs-container">
+        <img *ngFor="let imgUrl of stay.imgUrls " src="{{imgUrl}}" alt="stay-img">
+    </div>
+
+    <section class="details-content">
+        <div class="main-content">
+            <div class="host-details">
+                <div>
+                    <h3 class="host-name">{{stay.roomType}} by {{stay.host.fullname}}</h3>
+                    <p>bathrooms:{{stay.bathrooms}}•bedrooms:{{stay.bedrooms}}</p>
+                </div>
+                <img class="host-img" [src]="stay.host.pictureUrl" alt="">
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
