@@ -15,15 +15,13 @@
     //         minmax(20px, 1fr) minmax(auto, $mobile-breakpoint) minmax(20px, 1fr);
     // }
 
-    // @include for-normal-layout {
-    //     grid-template-columns:
-    //         minmax(20px, 1fr) minmax(auto, $narrow-breakpoint) minmax(20px, 1fr);
-    // }
+    @include for-normal-layout {
+        grid-template-columns: 30px 1fr 30px;
+    }
 
-    // @include for-wide-layout {
-    //     grid-template-columns:
-    //         minmax(20px, 1fr) minmax(auto, $normal-breakpoint) minmax(20px, 1fr);
-    // }
+    @include for-wide-layout {
+        grid-template-columns: 36px 1fr 36px;
+    }
 
     @include for-large-layout {
         grid-template-columns:
