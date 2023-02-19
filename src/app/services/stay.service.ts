@@ -22,4 +22,6 @@ export class StayService {
     }
     this._stays$.next(stays)
   }
+
+
 }
