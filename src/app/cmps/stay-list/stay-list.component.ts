@@ -9,6 +9,7 @@ import { Stay } from 'src/app/models/stay-model'
 export class StayListComponent {
   @Input() stays!: Stay[] | null
   @Output() remove = new EventEmitter<string>()
+  @Output() selectStay = new EventEmitter<string>()
 
   trackByFn(idx: number, item: any) {
     return item._id

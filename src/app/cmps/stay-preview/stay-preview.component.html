@@ -1,6 +1,8 @@
-<img src='{{ stay.imgUrls[0]}}' alt="">
-<section class="stay-contant">
-    <span>{{stay.name}}</span>
-    <span>{{stay.price}}$</span>
-    <button (click)="remove.emit(stay._id)">x</button>
+<section (click)="selectStay.emit(stay._id)" class="stay-preview">
+    <img src='{{ stay.imgUrls[0]}}' alt="">
+    <section class="stay-contant">
+        <span>{{stay.name}}</span>
+        <span>{{stay.price}}$</span>
+        <button (click)="remove.emit(stay._id)">x</button>
+    </section>
 </section>
