@@ -36,5 +36,27 @@ export class StayService {
     const stays = this.utilService.loadFromStorage(this.KEY)
     const stay = stays.find((stay: Stay) => stay._id === stayId)
     return stay ? of({ ...stay }) : of()
-}
+  }
+
+  public save(stay: Stay) {
+    return stay._id ? this._edit(stay) : this._add(stay)
+  }
+
+  private _add(stay: Stay) {
+    stay._id = this.utilService.makeId()
+    const stays = this.utilService.loadFromStorage(this.KEY)
+    stays.push(stay)
+    this.utilService.saveToStorage(this.KEY, stays)
+    this._stays$.next(stays)
+    return of(stay)
+  }
+
+  private _edit(stay: Stay) {
+    const stays = this.utilService.loadFromStorage(this.KEY)
+    const stayIdx = stays.findIndex((_stay: Stay) => _stay._id === stay._id)
+    stays.splice(stayIdx, 1, stay)
+    this.utilService.saveToStorage(this.KEY, stays)
+    this._stays$.next(stays)
+    return of(stay)
+  }
 }
