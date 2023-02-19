@@ -27,6 +27,7 @@ export class StayService {
     const stays = this.utilService.loadFromStorage(this.KEY)
     const stayIdx = stays.findIndex((stay: Stay) => stay._id === stayId)
     stays.splice(stayIdx, 1)
+    this.utilService.saveToStorage(this.KEY, stays)
     this._stays$.next(stays)
     return of()
   }

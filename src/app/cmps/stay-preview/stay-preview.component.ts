@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { Stay } from 'src/app/models/stay-model'
 
 @Component({
@@ -9,6 +9,7 @@ import { Stay } from 'src/app/models/stay-model'
 
 export class StayPreviewComponent implements OnInit {
   @Input() stay!: Stay
+  @Output() remove = new EventEmitter<string>()
 
   ngOnInit(): void {
     // console.log('stay:', this.stay)
