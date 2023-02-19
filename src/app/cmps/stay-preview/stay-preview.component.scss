@@ -5,7 +5,8 @@
 
     img {
         flex-grow: 1;
-        max-width: 250px;
+        // max-width: 250px;
+        aspect-ratio: 1/0.9;
         border-radius: 10px;
     }
 
