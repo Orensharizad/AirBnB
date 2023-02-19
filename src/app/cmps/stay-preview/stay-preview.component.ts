@@ -12,6 +12,6 @@ export class StayPreviewComponent implements OnInit {
   @Output() remove = new EventEmitter<string>()
 
   ngOnInit(): void {
-    // console.log('stay:', this.stay)
+
   }
 }

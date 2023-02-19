@@ -1,4 +1,15 @@
-<c-carousel (itemChange)="onItemChange($event)" [interval]="5000" transition="slide">
+<section (itemChange)="onItemChange($event)" transition="slide">
+    <section>
+      <section *ngFor="let slide of slides">
+        <img
+          [src]="slide"
+          class="d-block w-100"
+          loading="lazy"
+        />
+      </section>
+    </section>
+  </section>
+<!-- <c-carousel (itemChange)="onItemChange($event)" [interval]="5000" transition="slide">
     <c-carousel-inner>
       <c-carousel-item *ngFor="let slide of slides">
         <img
@@ -9,4 +20,4 @@
         />
       </c-carousel-item>
     </c-carousel-inner>
-  </c-carousel>
+  </c-carousel> -->

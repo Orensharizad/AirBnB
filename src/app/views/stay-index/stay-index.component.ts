@@ -20,7 +20,6 @@ export class StayIndexComponent implements OnInit {
   }
 
   removeStay(stayId: string): void {
-    console.log('stayId:', stayId);
     this.stayService.remove(stayId)
   }
 }

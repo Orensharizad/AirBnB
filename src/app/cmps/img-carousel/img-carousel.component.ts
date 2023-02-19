@@ -1,5 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CarouselModule } from '@coreui/angular';
+import { Component, Input, NgModule, OnInit } from '@angular/core'
+import { CarouselModule } from '@coreui/angular'
+
+// @NgModule({
+//   imports: [CarouselModule,]
+// })
 
 @Component({
   selector: 'img-carousel',
@@ -8,23 +12,14 @@ import { CarouselModule } from '@coreui/angular';
 })
 export class ImgCarouselComponent implements OnInit {
 
-  slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
-
-  constructor() {}
+  // slides: any[] = new Array(3).fill({id: -1, src: '', title: '', subtitle: ''});
+  @Input() slides!: string[]
+  constructor() { }
 
   ngOnInit(): void {
-    this.slides[0] = {
-      src: './assets/img/angular.jpg',
-    };
-    this.slides[1] = {
-      src: './assets/img/react.jpg',
-    }
-    this.slides[2] = {
-      src: './assets/img/vue.jpg',
-    }
   }
 
   onItemChange($event: any): void {
-    console.log('Carousel onItemChange', $event);
+    console.log('Carousel onItemChange', $event)
   }
 }
