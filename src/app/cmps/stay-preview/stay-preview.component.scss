@@ -1,10 +1,15 @@
-:host{
+:host {
     display: flex;
     flex-direction: column;
+    cursor: pointer;
 
-    img{
-        max-width: 320px;
-        height: 305px;
-        border-radius: 6px;
+    img {
+        flex-grow: 1;
+        max-width: 250px;
+        border-radius: 10px;
+    }
+
+    .stay-contant {
+        flex-basis: 20%;
     }
 }
