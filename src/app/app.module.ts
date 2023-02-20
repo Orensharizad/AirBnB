@@ -8,6 +8,7 @@ import { StayPreviewComponent } from './cmps/stay-preview/stay-preview.component
 import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { ToolBarComponent } from './cmps/tool-bar/tool-bar.component';
 import { StayDetailsComponent } from './views/stay-details/stay-details.component';
+import { DetailsInfoComponent } from './cmps/details-info/details-info.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { StayDetailsComponent } from './views/stay-details/stay-details.componen
     StayPreviewComponent,
     AppHeaderComponent,
     ToolBarComponent,
-    StayDetailsComponent
+    StayDetailsComponent,
+    DetailsInfoComponent
   ],
   imports: [
     BrowserModule,

@@ -8,9 +8,9 @@ import { Stay } from 'src/app/models/stay-model'
 })
 
 export class StayPreviewComponent implements OnInit {
+
   @Input() stay!: Stay
   @Output() remove = new EventEmitter<string>()
-  @Output() selectStay = new EventEmitter<string>()
 
   ngOnInit(): void {
     // console.log('stay:', this.stay)

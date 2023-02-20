@@ -11,14 +11,21 @@
     <section class="details-content">
         <div class="main-content">
             <div class="host-details">
-                <div>
+                <div class="host-info">
                     <h3 class="host-name">{{stay.roomType}} by {{stay.host.fullname}}</h3>
                     <p>bathrooms:{{stay.bathrooms}}•bedrooms:{{stay.bedrooms}}</p>
                 </div>
                 <img class="host-img" [src]="stay.host.pictureUrl" alt="">
             </div>
+            <details-info></details-info>
+            <div class="air-cover">
+                <h3 class="title"><span>air</span>cover</h3>
+                <p class="desc">Every booking includes free protection from Host cancellations, listing inaccuracies,
+                    and other issues like trouble checking in.</p>
+            </div>
 
         </div>
+        <div class="sub-content">hay</div>
 
     </section>
 

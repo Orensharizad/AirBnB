@@ -1,5 +1,6 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { lastValueFrom } from 'rxjs';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { lastValueFrom, Subscription } from 'rxjs';
 import { Stay } from 'src/app/models/stay-model';
 import { StayService } from 'src/app/services/stay.service';
 
@@ -8,14 +9,20 @@ import { StayService } from 'src/app/services/stay.service';
   templateUrl: './stay-details.component.html',
   styleUrls: ['./stay-details.component.scss']
 })
-export class StayDetailsComponent implements OnInit {
-  constructor(private stayService: StayService) { }
+export class StayDetailsComponent implements OnInit , OnDestroy {
+  constructor(
+    private route: ActivatedRoute,
+  ) { }
   @Input() stayId!: string
   stay: Stay | undefined
-  
+  subscription!: Subscription
+
   async ngOnInit() {
-    const stay = await lastValueFrom(this.stayService.getById(this.stayId))
-    this.stay = stay
+    this.subscription = this.route.data.subscribe(data => this.stay = data['stay'])
+  }
+
+  ngOnDestroy(): void {
+        this.subscription.unsubscribe()
   }
 
 }

@@ -1,4 +1,4 @@
-<section (click)="selectStay.emit(stay._id)" class="stay-preview">
+<section [routerLink]="['/stay', stay._id]" class="stay-preview">
     <img src='{{ stay.imgUrls[0]}}' alt="">
     <section class="stay-contant">
         <span>{{stay.name}}</span>
