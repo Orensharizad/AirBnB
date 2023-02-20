@@ -6,11 +6,8 @@ import { Stay } from 'src/app/models/stay-model';
   templateUrl: './details-review-stat.component.html',
   styleUrls: ['./details-review-stat.component.scss']
 })
-export class DetailsReviewStatComponent implements OnInit {
+export class DetailsReviewStatComponent  {
   @Input() stay!: Stay
 
-  ngOnInit(): void {
-    console.log('stay.reviews.:', this.stay.statReviews)
-    
-  }
+
 }

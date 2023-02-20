@@ -13,6 +13,8 @@ import { DetailsAmenitiesComponent } from './cmps/details-amenities/details-amen
 import { DetailsReviewStatComponent } from './cmps/details-review-stat/details-review-stat.component';
 import { ImgCarouselComponent } from './cmps/img-carousel/img-carousel.component';
 
+import { DetailsReviewsComponent } from './cmps/details-reviews/details-reviews.component';
+import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/details-review-preview.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +27,10 @@ import { ImgCarouselComponent } from './cmps/img-carousel/img-carousel.component
     StayDetailsComponent,
     DetailsInfoComponent,
     ImgCarouselComponent
+    DetailsAmenitiesComponent,
+    DetailsReviewStatComponent,
+    DetailsReviewsComponent,
+    DetailsReviewPreviewComponent,
   ],
   imports: [
     BrowserModule,
