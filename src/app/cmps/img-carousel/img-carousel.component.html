@@ -1,12 +1,12 @@
 <div class="arrows">
-        <article *ngIf="currIdx+1 !== slides?.length" class="left-arrow" (click)="next()"><i
+        <article *ngIf="currIdx"  class="left-arrow" (click)="next($event)"><i
                         class="fa-solid fa-chevron-left"></i></article>
-        <article *ngIf="currIdx" class="right-arrow" (click)="prev()"><i class="fa-solid fa-chevron-right"></i>
+        <article class="right-arrow" *ngIf="currIdx+1 !== slides?.length" (click)="prev($event)"><i class="fa-solid fa-chevron-right"></i>
         </article>
 </div>
 <img [src]="slides[currIdx]" alt="">
 <div class="img-nav">
-        <article *ngFor="let slide of slides; index as idx" (click)="moveTo(idx)" [ngClass]="{selected:currIdx === idx}">
+        <article *ngFor="let slide of slides; index as idx" (click)="moveTo($event,idx)" [ngClass]="{selected:currIdx === idx}">
         </article>
 </div>
 <!-- <section class="slide" [ngStyle]="{'background-image': getCurrImgUrl()}"></section> -->

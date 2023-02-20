@@ -12,14 +12,17 @@ export class ImgCarouselComponent {
   getCurrImgUrl(): string {
     return `url(${this.slides[this.currIdx]})`
   }
-  next(){
-    this.currIdx++
-  }
-  prev(){
+  next(ev: MouseEvent) {
+    ev.stopPropagation()
     this.currIdx--
   }
+  prev(ev: MouseEvent) {
+    ev.stopPropagation()
+    this.currIdx++
+  }
 
-  moveTo(idx:number){
+  moveTo(ev: MouseEvent, idx: number) {
+    ev.stopPropagation()
     this.currIdx = idx
   }
 }
