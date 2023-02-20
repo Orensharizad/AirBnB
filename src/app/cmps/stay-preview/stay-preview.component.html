@@ -1,8 +1,17 @@
 <article [routerLink]="['/stay', stay._id]" class="stay-preview">
     <img src='{{ stay.imgUrls[0]}}' alt="">
     <section class="stay-contant">
-        <span>{{stay.name}}</span>
-        <span>{{stay.price}}$</span>
-        <button (click)="remove.emit(stay._id)">x</button>
+        <p class="location">{{stay.loc.city}}, {{stay.loc.country}}
+            <span class="rate">
+                <i class="fa-solid fa-star"></i>
+                {{stay.statReviews.Value}} ({{stay.reviews?.length}})
+            </span>
+        </p>
+        <main>
+            <p class="stay-name">{{stay.name}}</p>
+            <p class="date">Mar 11-15</p>
+        </main>
+        <p>{{stay.price}}$ night</p>
+        <!-- <button (click)="remove.emit(stay._id)">x</button> -->
     </section>
 </article>
