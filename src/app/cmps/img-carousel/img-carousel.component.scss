@@ -1,6 +1,12 @@
 :host {
     position: relative;
 
+    &:hover {
+        .arrows {
+            opacity: 1;
+        }
+    }
+
     img {
         flex-grow: 3;
         aspect-ratio: 1/0.85;
