@@ -9,6 +9,8 @@ import { AppHeaderComponent } from './cmps/app-header/app-header.component';
 import { ToolBarComponent } from './cmps/tool-bar/tool-bar.component';
 import { StayDetailsComponent } from './views/stay-details/stay-details.component';
 import { DetailsInfoComponent } from './cmps/details-info/details-info.component';
+import { DetailsAmenitiesComponent } from './cmps/details-amenities/details-amenities.component';
+import { DetailsReviewStatComponent } from './cmps/details-review-stat/details-review-stat.component';
 import { ImgCarouselComponent } from './cmps/img-carousel/img-carousel.component';
 
 
@@ -21,8 +23,7 @@ import { ImgCarouselComponent } from './cmps/img-carousel/img-carousel.component
     AppHeaderComponent,
     ToolBarComponent,
     StayDetailsComponent,
-    DetailsInfoComponent,
-    ImgCarouselComponent,
+    DetailsInfoComponent
   ],
   imports: [
     BrowserModule,

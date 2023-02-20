@@ -2,6 +2,8 @@
 
 .stay-details {
     color: $clr1;
+    font-size: 16px;
+
 
     .stay-title {
         display: flex;
@@ -47,6 +49,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
 
         .main-content {
             width: 60%;
@@ -88,7 +91,6 @@
         .air-cover {
             border-bottom: 1px solid #dddddd;
             padding: 32px 0 ;
-            font-size: 16px;
 
             .title {
                 font-size: 2rem;
@@ -98,6 +100,12 @@
                     color: $clr3;
                 }
             }
+        }
+
+        .details-desc{
+            padding: 32px 0 ;
+            border-bottom: 1px solid #dddddd;
+
         }
     }
 }
