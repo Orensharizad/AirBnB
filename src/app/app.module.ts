@@ -11,6 +11,8 @@ import { StayDetailsComponent } from './views/stay-details/stay-details.componen
 import { DetailsInfoComponent } from './cmps/details-info/details-info.component';
 import { DetailsAmenitiesComponent } from './cmps/details-amenities/details-amenities.component';
 import { DetailsReviewStatComponent } from './cmps/details-review-stat/details-review-stat.component';
+import { DetailsReviewsComponent } from './cmps/details-reviews/details-reviews.component';
+import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/details-review-preview.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { DetailsReviewStatComponent } from './cmps/details-review-stat/details-r
     DetailsInfoComponent,
     DetailsAmenitiesComponent,
     DetailsReviewStatComponent,
+    DetailsReviewsComponent,
+    DetailsReviewPreviewComponent,
   ],
   imports: [
     BrowserModule,

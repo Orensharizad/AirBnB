@@ -17,7 +17,7 @@
                 </div>
                 <img class="host-img" [src]="stay.host.pictureUrl" alt="">
             </div>
-            <details-info></details-info>
+            <details-info [stay]="stay"></details-info>
             <div class="air-cover">
                 <h3 class="title"><span>air</span>cover</h3>
                 <p class="desc">Every booking includes free protection from Host cancellations, listing inaccuracies,
@@ -25,12 +25,12 @@
             </div>
             <div class="details-desc">{{stay.summary}}</div>
             <details-amenities [stay]="stay"></details-amenities>
-
-            <details-review-stat [stay]="stay"></details-review-stat>
         </div>
         <div class="sub-content">hay</div>
-        
-
+    </section>
+    <section class="reviews">
+        <details-review-stat [stay]="stay"></details-review-stat>
+        <details-reviews [stay]="stay"></details-reviews>
     </section>
 
 </section>

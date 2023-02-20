@@ -18,7 +18,7 @@ export interface Stay {
   statReviews: StatReviews
 }
 
-interface StatReviews {
+export interface StatReviews {
   Cleanliness: number
   Communication: number
   CheckIn: number
@@ -27,20 +27,20 @@ interface StatReviews {
   Value: number
 }
 
-interface Review {
+export interface Review {
   at: string
   by: By
   txt: string
 }
 
-interface By {
+export interface By {
   _id: string
   fullname: string
   imgUrl: string
   id: string
 }
 
-interface Loc {
+export interface Loc {
   country: string
   countryCode: string
   city: string
@@ -49,7 +49,7 @@ interface Loc {
   lan: number
 }
 
-interface Host {
+export interface Host {
   _id: string
   fullname: string
   location: string

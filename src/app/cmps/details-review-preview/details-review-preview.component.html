@@ -1,0 +1,15 @@
+<div class="main-user-info">
+    <img [src]="review.by.imgUrl" alt="" class="review-img">
+    <div class="sub-user-info">
+        <h3 class="user-title">{{review.by.fullname}}</h3>
+        <p class="user-date">{{review.at | date: 'MMM yyyy'}}</p>
+    </div>
+</div>
+<div>
+    <p class="review-desc">{{truncate(review.txt)}} </p>
+    <div *ngIf="review.txt.length>150">
+        <button (click)="isLessDesc = !isLessDesc" class="btn-show">Show more </button>
+        <i class="fa-solid fa-xs fa-chevron-right"></i>
+    </div>
+</div>
+

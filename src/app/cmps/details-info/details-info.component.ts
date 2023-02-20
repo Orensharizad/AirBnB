@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Stay } from 'src/app/models/stay-model';
 
 @Component({
   selector: 'details-info',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./details-info.component.scss']
 })
 export class DetailsInfoComponent {
+  @Input() stay!: Stay
 
 }
