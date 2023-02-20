@@ -18,4 +18,8 @@ export class ImgCarouselComponent {
   prev(){
     this.currIdx--
   }
+
+  moveTo(idx:number){
+    this.currIdx = idx
+  }
 }
