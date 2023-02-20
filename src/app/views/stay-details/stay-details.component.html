@@ -23,9 +23,13 @@
                 <p class="desc">Every booking includes free protection from Host cancellations, listing inaccuracies,
                     and other issues like trouble checking in.</p>
             </div>
+            <div class="details-desc">{{stay.summary}}</div>
+            <details-amenities [stay]="stay"></details-amenities>
 
+            <details-review-stat [stay]="stay"></details-review-stat>
         </div>
         <div class="sub-content">hay</div>
+        
 
     </section>
 

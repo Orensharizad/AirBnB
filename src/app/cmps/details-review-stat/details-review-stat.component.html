@@ -1,0 +1,11 @@
+<section class="details-review-stat">
+    <div class="stat-item" *ngFor="let item of stay.statReviews | keyvalue">
+        <div class="title">{{item.key}}</div>
+        <div class="flex align-center gap-5">
+            <progress max="5" value="{{item.value}}"></progress>
+            <p>{{item.value}}</p>
+
+        </div>
+    </div>
+
+</section>
