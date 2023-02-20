@@ -31,13 +31,13 @@
             border-radius: 5em;
             display: grid;
             margin: 0 15px;
+            position: absolute;
 
-            &.left-arrow {
-                margin-inline-end: auto;
-            }
+            // &.left-arrow {
+            // }
 
             &.right-arrow {
-                margin-inline-start: auto;
+                right: 0;
             }
 
             i {
