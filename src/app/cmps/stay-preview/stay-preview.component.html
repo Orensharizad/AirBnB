@@ -1,10 +1,11 @@
 <article [routerLink]="['/stay', stay._id]" class="stay-preview">
-    <img src='{{ stay.imgUrls[0]}}' alt="">
+    <!-- <img src='{{ stay.imgUrls[0]}}' alt=""> -->
+    <img-carousel [slides]="stay.imgUrls"></img-carousel>
     <section class="stay-contant">
         <p class="location">{{stay.loc.city}}, {{stay.loc.country}}
             <span class="rate">
                 <i class="fa-solid fa-star"></i>
-                {{stay.statReviews.Value}} ({{stay.reviews?.length}})
+                {{stay.statReviews.Value}} ({{stay.reviews.length}})
             </span>
         </p>
         <main>

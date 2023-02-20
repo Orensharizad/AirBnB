@@ -90,3 +90,11 @@
     pointer-events: auto;
     opacity: 1;
 }
+
+.stay-preview {
+    &:hover {
+        .arrows {
+            opacity: 1;
+        }
+    }
+}
