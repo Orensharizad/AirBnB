@@ -23,7 +23,8 @@ import { ImgCarouselComponent } from './cmps/img-carousel/img-carousel.component
     AppHeaderComponent,
     ToolBarComponent,
     StayDetailsComponent,
-    DetailsInfoComponent
+    DetailsInfoComponent,
+    ImgCarouselComponent
   ],
   imports: [
     BrowserModule,
