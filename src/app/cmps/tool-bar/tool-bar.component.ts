@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { StayFilter } from 'src/app/models/stay-model';
+import { StayService } from 'src/app/services/stay.service';
 
 @Component({
   selector: 'tool-bar',
@@ -6,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./tool-bar.component.scss']
 })
 export class ToolBarComponent {
+  constructor(private stayService: StayService) { }
   imgs: { title: string, url: string }[] = [
     {
       title: 'Castles',
@@ -52,5 +55,9 @@ export class ToolBarComponent {
       url: 'https://res.cloudinary.com/dsvs2bgn4/image/upload/v1676817945/Cabins_gnbsvq.png'
     },
   ]
+
+  onSetFilter(stayFilter:StayFilter) {
+    this.stayService.setFilter(stayFilter)
+  }
 }
 

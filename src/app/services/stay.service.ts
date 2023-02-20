@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core'
-import { Stay } from 'src/app/models/stay-model'
+import { Stay, StayFilter } from 'src/app/models/stay-model'
 import { UtilService } from './util.service'
 import data from '../../data.json'
 import { BehaviorSubject, Observable, of } from 'rxjs'
@@ -14,11 +14,19 @@ export class StayService {
   private _stays$ = new BehaviorSubject<Stay[]>([]);
   public stays$ = this._stays$.asObservable()
 
+  private _stayFilter$ = new BehaviorSubject<StayFilter>({ term: '' })
+  public stayFilter$ = this._stayFilter$.asObservable()
+
   public query() {
+    const filterBy = this._stayFilter$.value
     let stays = this.utilService.loadFromStorage(this.KEY)
     if (!stays) {
       stays = data.map(stay => ({ ...stay, _id: this.utilService.makeId() }))
       this.utilService.saveToStorage(this.KEY, stays)
+    }
+    if (filterBy.term) {
+      console.log('filterBy.term: ', filterBy.term);
+      stays = stays.filter((stay: Stay) => stay.types.includes(filterBy.term))
     }
     this._stays$.next(stays)
   }
@@ -42,6 +50,11 @@ export class StayService {
     return stay._id ? this._edit(stay) : this._add(stay)
   }
 
+  public setFilter(stayFilter: StayFilter) {
+    this._stayFilter$.next(stayFilter)
+    this.query()
+}
+
   private _add(stay: Stay) {
     stay._id = this.utilService.makeId()
     const stays = this.utilService.loadFromStorage(this.KEY)
@@ -59,4 +72,6 @@ export class StayService {
     this._stays$.next(stays)
     return of(stay)
   }
+
+  
 }

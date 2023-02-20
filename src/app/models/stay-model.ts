@@ -60,3 +60,7 @@ export interface Host {
   isSuperhost: boolean
   id: string
 }
+
+export interface StayFilter {
+  term: string
+}

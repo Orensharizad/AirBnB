@@ -26,7 +26,7 @@ import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/det
     ToolBarComponent,
     StayDetailsComponent,
     DetailsInfoComponent,
-    ImgCarouselComponent
+    ImgCarouselComponent,
     DetailsAmenitiesComponent,
     DetailsReviewStatComponent,
     DetailsReviewsComponent,

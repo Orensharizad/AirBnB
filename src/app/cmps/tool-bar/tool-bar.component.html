@@ -1,7 +1,7 @@
 <section class="tool-bar main-layout">
-    <div class="tool-bar-list" >
-        <div class="tool-bar-preview" *ngFor="let img of imgs ">
-            <img  src="{{img.url}}" alt="">
+    <div class="tool-bar-list">
+        <div class="tool-bar-preview" *ngFor="let img of imgs " (click)="onSetFilter({term:img.title})">
+            <img src="{{img.url}}" alt="">
             {{img.title}}
 
         </div>
