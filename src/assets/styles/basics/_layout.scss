@@ -1,6 +1,6 @@
 .main-layout {
     display: grid;
-    grid-template-columns: 24px 1fr 24px;
+    grid-template-columns: 30px 1fr 30px;
 
     >* {
         grid-column: 2;
@@ -11,11 +11,11 @@
     }
 
     @include for-normal-layout {
-        grid-template-columns: 30px 1fr 30px;
+        grid-template-columns: 36px 1fr 36px;
     }
 
     @include for-wide-layout {
-        grid-template-columns: 36px 1fr 36px;
+        grid-template-columns: 42px 1fr 42px;
     }
 
     @include for-large-layout {
