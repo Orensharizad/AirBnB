@@ -21,6 +21,4 @@ export class StayIndexComponent implements OnInit {
   removeStay(stayId: string): void {
     this.stayService.remove(stayId)
   }
-
-  
 }
