@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core'
 import { Stay } from 'src/app/models/stay-model'
 import { Router } from '@angular/router';
 
@@ -6,7 +6,8 @@ import { Router } from '@angular/router';
 @Component({
   selector: 'stay-preview',
   templateUrl: './stay-preview.component.html',
-  styleUrls: ['./stay-preview.component.scss']
+  styleUrls: ['./stay-preview.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 
 export class StayPreviewComponent implements OnInit {

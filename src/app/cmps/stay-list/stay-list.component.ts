@@ -1,10 +1,11 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core'
+import { Component, Input, Output, EventEmitter, ChangeDetectionStrategy } from '@angular/core'
 import { Stay } from 'src/app/models/stay-model'
 
 @Component({
   selector: 'stay-list',
   templateUrl: './stay-list.component.html',
-  styleUrls: ['./stay-list.component.scss']
+  styleUrls: ['./stay-list.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StayListComponent {
   @Input() stays!: Stay[] | null

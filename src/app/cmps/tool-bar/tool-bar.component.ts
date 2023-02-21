@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { StayFilter } from 'src/app/models/stay-model';
 import { StayService } from 'src/app/services/stay.service';
 
 @Component({
   selector: 'tool-bar',
   templateUrl: './tool-bar.component.html',
-  styleUrls: ['./tool-bar.component.scss']
+  styleUrls: ['./tool-bar.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ToolBarComponent {
   constructor(private stayService: StayService) { }
