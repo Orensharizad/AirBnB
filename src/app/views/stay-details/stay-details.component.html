@@ -26,7 +26,22 @@
             <div class="details-desc">{{stay.summary}}</div>
             <details-amenities [stay]="stay"></details-amenities>
         </div>
-        <div class="sub-content">hay</div>
+        <div class="sub-content">
+            <div class="reserve-container">
+                <div class="reserve-header ">
+                    <div class="price ">
+                        <h3>{{stay.price}}$</h3> <span>nigth</span>
+                    </div>
+                    <div class="rate ">
+                        <i class="fa-solid fa-xs fa-star"></i>
+                        <p>{{stay.statReviews.Value}}</p>
+                        <span>{{stay.reviews.length}}reviews</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
     </section>
     <section class="reviews">
         <details-review-stat [stay]="stay"></details-review-stat>
