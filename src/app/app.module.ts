@@ -15,6 +15,7 @@ import { ImgCarouselComponent } from './cmps/img-carousel/img-carousel.component
 
 import { DetailsReviewsComponent } from './cmps/details-reviews/details-reviews.component';
 import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/details-review-preview.component';
+import { StayEditComponent } from './views/stay-edit/stay-edit.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/det
     DetailsReviewStatComponent,
     DetailsReviewsComponent,
     DetailsReviewPreviewComponent,
+    StayEditComponent,
   ],
   imports: [
     BrowserModule,
