@@ -1,1 +1,60 @@
-<p>stay-edit works!</p>
+<main>
+    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
+        <h2>
+            <input name="name" placeholder="Stay name" />
+        </h2>
+        <div ngModelGroup="loc" class="loc">
+            <label>
+                <input ngModel name="country" placeholder="Enter country" />
+            </label>
+            <label>
+                <input ngModel name="city" placeholder="Enter city" />
+            </label>
+            <label>
+                <input ngModel name="address" placeholder="Enter address" />
+            </label>
+        </div>
+        <section class="imgs-container">
+            <section class="img-upload" *ngFor="let number of numbers"
+                style="background-image: url(&quot;undefined&quot;);">
+                <label class="">
+                    <p>Upload Image</p><input type="file" hidden="">
+                </label>
+            </section>
+        </section>
+        <div class="below-imgs">
+            <div class="stay-details">
+                <label>
+                    Capacity
+                    <input ngModel required name="capacity" placeholder="" />
+                </label>
+                <label>Stay type:
+                    <select name="roomType">
+                        <option value="Entire place">Entire place</option>
+                        <option value="Private room">Private room</option>
+                        <option value="Shared room">Shared room</option>
+                    </select>
+                </label>
+                <label>Price:
+                    <input type="text">/night
+                </label>
+            </div>
+            <div class="desc">
+                <h3>Description</h3>
+                <textarea name="summary"></textarea>
+            </div>
+            <div class="amenition-container">
+                <h4>Amenities</h4>
+                <div class="stay-amenition">
+                    <div *ngFor="let amenitie of amenities" class="amenition-item">
+                        <input ngModel type="checkbox" [id]="amenitie" name="newsletter" [value]="amenitie">
+                        <label [for]="amenitie">{{amenitie}}</label>
+                    </div>
+                </div>
+            </div>
+            <div align="end">
+                <button class="submit-btn" [disabled]="form.invalid" type="submit">Save</button>
+            </div>
+        </div>
+    </form>
+</main>

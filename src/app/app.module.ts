@@ -16,6 +16,7 @@ import { ImgCarouselComponent } from './cmps/img-carousel/img-carousel.component
 import { DetailsReviewsComponent } from './cmps/details-reviews/details-reviews.component';
 import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/details-review-preview.component';
 import { StayEditComponent } from './views/stay-edit/stay-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { StayEditComponent } from './views/stay-edit/stay-edit.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
