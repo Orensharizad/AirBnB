@@ -18,6 +18,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { DetailsReviewsComponent } from './cmps/details-reviews/details-reviews.component';
 import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/details-review-preview.component';
 import { LoginSignupComponent } from './cmps/login-signup/login-signup.component';
+import { StayEditComponent } from './views/stay-edit/stay-edit.component';
 
 @NgModule({
   declarations: [
@@ -36,11 +37,12 @@ import { LoginSignupComponent } from './cmps/login-signup/login-signup.component
     DetailsReviewPreviewComponent,
     LoginSignupComponent,
    
+    StayEditComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
