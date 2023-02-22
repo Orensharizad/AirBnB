@@ -6,7 +6,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app-header.component.scss']
 })
 export class AppHeaderComponent {
+  isExpandLogin: Boolean = false
 
- 
+  toggleIsLogin() {
+    this.isExpandLogin = !this.isExpandLogin
+  }
 
 }

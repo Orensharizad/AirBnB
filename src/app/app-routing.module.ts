@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { environment } from 'src/environments/environment.development';
+import { LoginSignupComponent } from './cmps/login-signup/login-signup.component';
 import { StayResolver } from './services/stay.resolver';
 import { StayDetailsComponent } from './views/stay-details/stay-details.component';
 import { StayIndexComponent } from './views/stay-index/stay-index.component';
@@ -14,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: StayIndexComponent
+    component: StayIndexComponent,
   }
 ];
 

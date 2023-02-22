@@ -12,9 +12,12 @@ import { DetailsInfoComponent } from './cmps/details-info/details-info.component
 import { DetailsAmenitiesComponent } from './cmps/details-amenities/details-amenities.component';
 import { DetailsReviewStatComponent } from './cmps/details-review-stat/details-review-stat.component';
 import { ImgCarouselComponent } from './cmps/img-carousel/img-carousel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { DetailsReviewsComponent } from './cmps/details-reviews/details-reviews.component';
 import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/details-review-preview.component';
+import { LoginSignupComponent } from './cmps/login-signup/login-signup.component';
 
 @NgModule({
   declarations: [
@@ -31,10 +34,13 @@ import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/det
     DetailsReviewStatComponent,
     DetailsReviewsComponent,
     DetailsReviewPreviewComponent,
+    LoginSignupComponent,
+   
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
