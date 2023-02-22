@@ -7,7 +7,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppHeaderComponent {
+  isExpandLogin: Boolean = false
 
- 
+  toggleIsLogin() {
+    this.isExpandLogin = !this.isExpandLogin
+  }
 
 }

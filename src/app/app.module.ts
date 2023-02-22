@@ -12,11 +12,13 @@ import { DetailsInfoComponent } from './cmps/details-info/details-info.component
 import { DetailsAmenitiesComponent } from './cmps/details-amenities/details-amenities.component';
 import { DetailsReviewStatComponent } from './cmps/details-review-stat/details-review-stat.component';
 import { ImgCarouselComponent } from './cmps/img-carousel/img-carousel.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { DetailsReviewsComponent } from './cmps/details-reviews/details-reviews.component';
 import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/details-review-preview.component';
+import { LoginSignupComponent } from './cmps/login-signup/login-signup.component';
 import { StayEditComponent } from './views/stay-edit/stay-edit.component';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { FormsModule } from '@angular/forms';
     DetailsReviewStatComponent,
     DetailsReviewsComponent,
     DetailsReviewPreviewComponent,
+    LoginSignupComponent,
+   
     StayEditComponent,
   ],
   imports: [

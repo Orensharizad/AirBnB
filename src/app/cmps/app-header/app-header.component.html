@@ -20,7 +20,7 @@
         <div class="sub-container  ">
             <p routerLink="/stay/edit" class="item">Airbnb your home</p>
             <i class=" item fa-solid fa-globe"></i>
-            <div class="contact-container">
+            <div (click)="toggleIsLogin()" class="contact-container">
                 <i class="fa-solid fa-bars"></i>
                 <img width="30px" height="30px
                 " src="../../../assets/imgs/contact.svg" alt="">
@@ -28,3 +28,6 @@
         </div>
     </div>
 </header>
+
+
+<login-signup (close)="toggleIsLogin()" *ngIf="isExpandLogin"></login-signup>

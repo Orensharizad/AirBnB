@@ -1,0 +1,33 @@
+<div (click)="onClose()" class="black-screen"></div>
+
+<section class="login-signup">
+    <div class="modal-header">
+        <h3>Log in or sign up</h3>
+        <button (click)="onClose()" class="btn-close-modal">X</button>
+    </div>
+
+    <h2 class="">Welcome to Airbnb</h2>
+
+    <form class="signup-form" *ngIf=" !isSignup" (submit)="onSignup()">
+
+        <input placeholder="UserName" type="text" name="username" [(ngModel)]="credentials.username">
+        <div class="form-line"></div>
+        <input placeholder="fullname" type="text" name="fullname" [(ngModel)]="credentials.fullname">
+        <div class="form-line"></div>
+        <input placeholder="password" type="password" name="password" [(ngModel)]="credentials.password">
+    </form>
+    <form class="login-form" *ngIf=" isSignup" (submit)="onLogin()">
+        <input placeholder="UserName" type="text" name="username" [(ngModel)]="credentials.username">
+        <div class="form-line"></div>
+        <input placeholder="password" type="password" name="password" [(ngModel)]="credentials.password">
+    </form>
+
+    <button class="btn-login-signup" (click)="!isSignup ? onSignup() : onLogin()">{{isSignup ? 'Login' : 'Sign
+        Up'}}</button>
+
+    <button class="btn-check" (click)="isSignup = !isSignup">{{!isSignup ? 'Already signed up?' :
+        "Don't have an acount yet? sign up"}}</button>
+
+    <!-- <button *ngIf="user" (click)="onLogOut()">LogOut</button> -->
+
+</section>

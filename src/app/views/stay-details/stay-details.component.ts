@@ -4,12 +4,13 @@ import { lastValueFrom, Subscription } from 'rxjs';
 import { Stay } from 'src/app/models/stay-model';
 import { StayService } from 'src/app/services/stay.service';
 
+
 @Component({
   selector: 'stay-details',
   templateUrl: './stay-details.component.html',
   styleUrls: ['./stay-details.component.scss']
 })
-export class StayDetailsComponent implements OnInit , OnDestroy {
+export class StayDetailsComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
   ) { }
@@ -22,7 +23,7 @@ export class StayDetailsComponent implements OnInit , OnDestroy {
   }
 
   ngOnDestroy(): void {
-        this.subscription.unsubscribe()
+    this.subscription.unsubscribe()
   }
 
 }

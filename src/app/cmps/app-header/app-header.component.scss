@@ -7,7 +7,7 @@ header {
     position: sticky;
     top: 0;
     background-color: #fff;
-    z-index: 999;
+    z-index: 10;
 
     .main-header {
         display: flex;
@@ -71,11 +71,12 @@ header {
             display: flex;
             align-items: center;
             gap: 20px;
+            cursor: pointer;
+
 
             .item {
                 padding: 1em;
                 border-radius: 2em;
-                cursor: pointer;
 
                 &:hover {
                     background-color: #f7f7f7;
