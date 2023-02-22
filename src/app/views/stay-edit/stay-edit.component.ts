@@ -10,7 +10,14 @@ export class StayEditComponent {
   numbers: number[] = Array(5).fill(0).map((x, i) => i)
 
   onSubmit(form: NgForm) {
-    console.log(form.value)
+    const amenities = []
+    const {amenitieMap} = form.value
+    for (const amenitie in amenitieMap) {
+      if(amenitieMap[amenitie]) amenities.push(amenitie)
+    }
+    const newStay = {...form.value,amenities}
+    delete newStay.amenitieMap
+    console.log('newStay:', newStay);
     form.reset()
   }
   amenities: string[] = [

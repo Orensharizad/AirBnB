@@ -44,9 +44,9 @@
             </div>
             <div class="amenition-container">
                 <h4>Amenities</h4>
-                <div class="stay-amenition">
+                <div class="stay-amenition" ngModelGroup="amenitieMap">
                     <div *ngFor="let amenitie of amenities" class="amenition-item">
-                        <input ngModel type="checkbox" [id]="amenitie" name="amenitie" [value]="amenitie">
+                        <input  type="checkbox" [id]="amenitie" ngModel [name]="amenitie" [value]="amenitie">
                         <label [for]="amenitie">{{amenitie}}</label>
                     </div>
                 </div>
