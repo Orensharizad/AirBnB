@@ -1,5 +1,6 @@
 import { Component } from '@angular/core'
 import { NgForm } from '@angular/forms'
+import { StayService } from 'src/app/services/stay.service'
 
 @Component({
   selector: 'stay-edit',
@@ -7,19 +8,23 @@ import { NgForm } from '@angular/forms'
   styleUrls: ['./stay-edit.component.scss']
 })
 export class StayEditComponent {
-  numbers: number[] = Array(5).fill(0).map((x, i) => i)
+  constructor(private stayService: StayService) { }
+  imgUrls: string[] = Array(5).fill('')
+  // numbers: number[] = Array(5).fill(0).map((x, i) => i)
 
   onSubmit(form: NgForm) {
     const amenities = []
-    const {amenitieMap} = form.value
+    const { amenitieMap } = form.value
     for (const amenitie in amenitieMap) {
-      if(amenitieMap[amenitie]) amenities.push(amenitie)
+      if (amenitieMap[amenitie]) amenities.push(amenitie)
     }
-    const newStay = {...form.value,amenities}
+    const newStay = { ...form.value, amenities, imgUrl: this.imgUrls.filter(img => img) }
     delete newStay.amenitieMap
-    console.log('newStay:', newStay);
-    form.reset()
+    console.log('newStay:', newStay)
+    // this.stayService.save(newStay)
+    // form.reset()
   }
+
   amenities: string[] = [
     'TV',
     'Cable TV',

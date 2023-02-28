@@ -15,9 +15,10 @@
             </label>
         </div>
         <section class="imgs-container">
-            <section class="img-upload" *ngFor="let number of numbers">
+            <section class="img-upload" *ngFor="let imgUrl of imgUrls;index as i">
                 <label>
-                    <p>Upload Image</p><input type="file" hidden>
+                    <p>Upload Image</p>
+                    <input type="file" hidden [(ngModel)]="imgUrls[i]" name="i">
                 </label>
             </section>
         </section>
