@@ -1,6 +1,8 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
 import { User, UserCred, UserService } from 'src/app/services/user.service';
+import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'login-signup',
@@ -10,7 +12,8 @@ import { User, UserCred, UserService } from 'src/app/services/user.service';
 export class LoginSignupComponent implements OnInit {
   constructor(
     private userService: UserService,
-    private router: Router
+    private router: Router,
+    private toastr: ToastrService
   ) { }
 
   @Output() close = new EventEmitter()
@@ -27,10 +30,18 @@ export class LoginSignupComponent implements OnInit {
 
   onLogin() {
     if (!this.credentials.username) return;
-    this.userService.login(this.credentials);
-    this.user = this.userService.getLoggedinUser();
-    this.clearCredentials();
-    if(this.user) this.onClose()
+   const loggdinUser = this.userService.login(this.credentials);
+   if(loggdinUser){
+     this.user = this.userService.getLoggedinUser();
+     this.clearCredentials();
+     this.onClose()
+     this.toastr.success('Login successful')
+   }
+   else {
+    this.toastr.error('Cannot find this user')
+
+
+   }
   }
   onSignup() {
     if (

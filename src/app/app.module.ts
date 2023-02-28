@@ -19,6 +19,10 @@ import { DetailsReviewsComponent } from './cmps/details-reviews/details-reviews.
 import { DetailsReviewPreviewComponent } from './cmps/details-review-preview/details-review-preview.component';
 import { LoginSignupComponent } from './cmps/login-signup/login-signup.component';
 import { StayEditComponent } from './views/stay-edit/stay-edit.component';
+import { ProfileModalComponent } from './cmps/profile-modal/profile-modal.component';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -38,11 +42,14 @@ import { StayEditComponent } from './views/stay-edit/stay-edit.component';
     LoginSignupComponent,
    
     StayEditComponent,
+         ProfileModalComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

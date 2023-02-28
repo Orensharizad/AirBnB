@@ -18,6 +18,11 @@ export interface UserCred {
   isAdmin: Boolean
 }
 
+export interface LoggdinUser {
+  _id: string
+  fullname: string
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -42,8 +47,9 @@ export class UserService {
     const user = users.find((user: User) => user.username === userCred.username)
     if (user) {
       this.saveLocalUser(user)
-      console.log('login success')
+      return user
     }
+    else return null
 
   }
 
@@ -61,9 +67,10 @@ export class UserService {
     sessionStorage.removeItem(this.STORAGE_KEY_LOGGEDIN_USER)
   }
 
-  public getLoggedinUser() {
+  public getLoggedinUser(): LoggdinUser | null {
     const user = sessionStorage.getItem(this.STORAGE_KEY_LOGGEDIN_USER)
     if (user) return JSON.parse(user)
+    else return null
   }
 
   public getEmptyCredentials(): UserCred {

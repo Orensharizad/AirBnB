@@ -7,10 +7,16 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppHeaderComponent {
+  isExpandProfile: Boolean = false
+
   isExpandLogin: Boolean = false
 
+  toggleIsProfile() {
+    this.isExpandProfile = !this.isExpandProfile
+  }
   toggleIsLogin() {
     this.isExpandLogin = !this.isExpandLogin
+    this.isExpandProfile = false
   }
 
 }

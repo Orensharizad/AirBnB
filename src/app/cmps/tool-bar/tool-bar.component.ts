@@ -12,7 +12,7 @@ export class ToolBarComponent {
   constructor(private stayService: StayService) { }
   imgs: { title: string, url: string }[] = [
     {
-      title: 'Castles',
+      title: 'Campers',
       url: 'https://res.cloudinary.com/dsvs2bgn4/image/upload/v1676817945/Castles_h3vc82.png'
     },
     {
@@ -24,7 +24,7 @@ export class ToolBarComponent {
       url: 'https://res.cloudinary.com/dsvs2bgn4/image/upload/v1676817945/Earth_homes_bao1mc.png'
     },
     {
-      title: 'Islands',
+      title: 'Casas particulares',
       url: 'https://res.cloudinary.com/dsvs2bgn4/image/upload/v1676817946/Islands_cr82fg.png'
     },
     {
@@ -32,15 +32,15 @@ export class ToolBarComponent {
       url: 'https://res.cloudinary.com/dsvs2bgn4/image/upload/v1676817946/Luxe_nbrmyo.png'
     },
     {
-      title: 'Mansions',
+      title: 'Skiing',
       url: 'https://res.cloudinary.com/dsvs2bgn4/image/upload/v1676817946/Mansions_r7upsq.png'
     },
     {
-      title: 'OMG!',
+      title: 'OMG',
       url: 'https://res.cloudinary.com/dsvs2bgn4/image/upload/v1676817946/OMG_n7p7bq.png'
     },
     {
-      title: 'Trending',
+      title: 'Off-the-grid',
       url: 'https://res.cloudinary.com/dsvs2bgn4/image/upload/v1676817946/Trending_cwbjcz.png'
     },
     {
@@ -48,11 +48,11 @@ export class ToolBarComponent {
       url: 'https://res.cloudinary.com/dsvs2bgn4/image/upload/v1676817945/Boats_mq7yia.png'
     },
     {
-      title: 'Domes',
+      title: 'Caves',
       url: 'https://res.cloudinary.com/dsvs2bgn4/image/upload/v1676817946/Domes_hjecfw.png'
     },
     {
-      title: 'Cabins',
+      title: 'Ryokans',
       url: 'https://res.cloudinary.com/dsvs2bgn4/image/upload/v1676817945/Cabins_gnbsvq.png'
     },
   ]

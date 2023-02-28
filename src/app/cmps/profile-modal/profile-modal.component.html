@@ -1,0 +1,14 @@
+<section class="profile-modal">
+
+    <div class="profile-login" *ngIf="!loggdinUser">
+        <button (click)="toggleIsLogin()" class="btn-login">Login</button>
+    </div>
+
+    <div class="profile-logout" *ngIf="loggdinUser">
+        <p class="profile-fullname">Hello {{loggdinUser.fullname }}</p>
+        <button (click)="onLogout()" class="btn-logout">Log out </button>
+    </div>
+
+</section>
+
+<!-- <login-signup (close)="toggleIsLogin()" *ngIf="isLogin"></login-signup> -->
