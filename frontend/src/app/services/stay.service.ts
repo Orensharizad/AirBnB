@@ -25,7 +25,6 @@ export class StayService {
       this.utilService.saveToStorage(this.KEY, stays)
     }
     if (filterBy.term) {
-      console.log('filterBy.term: ', filterBy.term);
       stays = stays.filter((stay: Stay) => stay.types.includes(filterBy.term))
     }
     this._stays$.next(stays)
