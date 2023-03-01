@@ -59,22 +59,10 @@ async function removeStay(req, res) {
   }
 }
 
-async function removeGroupFromStay(req, res) {
-  try {
-    const { stayId, groupId } = req.params
-    const removedId = await stayService.removeGroupFromStay(stayId, groupId)
-    res.send(removedId)
-  } catch (err) {
-    logger.error('Failed to remove stay', err)
-    res.status(500).send({ err: 'Failed to remove stay' })
-  }
-}
-
 module.exports = {
   getStays,
   getStayById,
   addStay,
   updateStay,
   removeStay,
-  removeGroupFromStay,
 }
