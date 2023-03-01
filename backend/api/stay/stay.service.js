@@ -5,66 +5,66 @@ const ObjectId = require('mongodb').ObjectId
 
 async function query() {
     try {
-        const collection = await dbService.getCollection('board')
-        const boards = await collection.find().toArray()
-        return boards
+        const collection = await dbService.getCollection('stay')
+        const stays = await collection.find().toArray()
+        return stays
     } catch (err) {
-        logger.error('cannot find boards', err)
+        logger.error('cannot find stays', err)
         throw err
     }
 }
 
-async function getById(boardId) {
+async function getById(stayId) {
     try {
-        const collection = await dbService.getCollection('board')
-        const board = await collection.findOne({ _id: ObjectId(boardId) })
-        return board
+        const collection = await dbService.getCollection('stay')
+        const stay = await collection.findOne({ _id: ObjectId(stayId) })
+        return stay
     } catch (err) {
-        logger.error(`while finding board ${boardId}`, err)
+        logger.error(`while finding stay ${stayId}`, err)
         throw err
     }
 }
 
-async function remove(boardId) {
+async function remove(stayId) {
     try {
-        const collection = await dbService.getCollection('board')
-        await collection.deleteOne({ _id: ObjectId(boardId) })
-        return boardId
+        const collection = await dbService.getCollection('stay')
+        await collection.deleteOne({ _id: ObjectId(stayId) })
+        return stayId
     } catch (err) {
-        logger.error(`cannot remove board ${boardId}`, err)
+        logger.error(`cannot remove stay ${stayId}`, err)
         throw err
     }
 }
 
-async function add(board) {
+async function add(stay) {
     try {
-        const collection = await dbService.getCollection('board')
-        await collection.insertOne(board)
-        return board
+        const collection = await dbService.getCollection('stay')
+        await collection.insertOne(stay)
+        return stay
     } catch (err) {
-        logger.error('cannot insert board', err)
+        logger.error('cannot insert stay', err)
         throw err
     }
 }
 
-async function update(board) {
+async function update(stay) {
     try {
-        const boardToSave = JSON.parse(JSON.stringify((board)))
-        // const boardToSave = structuredClone(board)
-        delete boardToSave._id
-        const collection = await dbService.getCollection('board')
-        await collection.updateOne({ _id: ObjectId(board._id) }, { $set: boardToSave })
-        return board
+        const stayToSave = JSON.parse(JSON.stringify((stay)))
+        // const stayToSave = structuredClone(stay)
+        delete stayToSave._id
+        const collection = await dbService.getCollection('stay')
+        await collection.updateOne({ _id: ObjectId(stay._id) }, { $set: stayToSave })
+        return stay
     } catch (err) {
-        logger.error(`cannot update board ${board._id}`, err)
+        logger.error(`cannot update stay ${stay._id}`, err)
         throw err
     }
 }
 
-async function removeGroupFromBoard(boardId, groupId) {
+async function removeGroupFromStay(stayId, groupId) {
     try {
-        const collection = await dbService.getCollection('board')
-        await collection.updateOne({ _id: ObjectId(boardId) }, { $pull: { 'groups': { '_id': groupId } } })
+        const collection = await dbService.getCollection('stay')
+        await collection.updateOne({ _id: ObjectId(stayId) }, { $pull: { 'groups': { '_id': groupId } } })
         return groupId
     } catch (err) {
         logger.error(`cannot remove group ${groupId}`, err)
@@ -72,9 +72,9 @@ async function removeGroupFromBoard(boardId, groupId) {
     }
 }
 
-async function getAiBoardFromChat(prompt) {
+async function getAiStayFromChat(prompt) {
     try {
-        const script = await dbService.getBoardScript(prompt)
+        const script = await dbService.getStayScript(prompt)
         const lines = script.split('\n')
         const groups = lines.reduce((acc, line) => {
             if (line.includes('$') && !line.includes('Object')) {
@@ -96,12 +96,12 @@ async function getAiBoardFromChat(prompt) {
             }))
             return newGroup
         }))
-        const aiBoard = _createAiBoard(`${prompt.prompt}`, newGroups)
-        const aiBoardWithId = await add(aiBoard)
-        return await getById(aiBoardWithId._id)
+        const aiStay = _createAiStay(`${prompt.prompt}`, newGroups)
+        const aiStayWithId = await add(aiStay)
+        return await getById(aiStayWithId._id)
 
     } catch (err) {
-        console.log('err from getiin ai in board sevice', err)
+        console.log('err from getiin ai in stay sevice', err)
         throw err
     }
 }
@@ -112,7 +112,7 @@ function _removeSpecialChars(str) {
         .replace(/^(\s*)([\W\w]*)(\b\s*$)/g, '$2')
 }
 
-function _createAiBoard(title, groups = []) {
+function _createAiStay(title, groups = []) {
     return {
         title,
         isstarred: false,
@@ -252,6 +252,6 @@ module.exports = {
     getById,
     add,
     update,
-    removeGroupFromBoard,
-    getAiBoardFromChat,
+    removeGroupFromStay,
+    getAiStayFromChat,
 }
