@@ -21,6 +21,8 @@
     "@angular/platform-browser": "^15.1.0",
     "@angular/platform-browser-dynamic": "^15.1.0",
     "@angular/router": "^15.1.0",
+    "@cloudinary/ng": "^1.11.0",
+    "@cloudinary/url-gen": "^1.9.1",
     "@coreui/angular": "^4.3.11",
     "@coreui/coreui": "^4.2.6",
     "ngx-toastr": "^16.0.2",

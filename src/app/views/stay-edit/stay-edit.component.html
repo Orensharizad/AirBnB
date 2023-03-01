@@ -15,10 +15,11 @@
             </label>
         </div>
         <section class="imgs-container">
-            <section class="img-upload" *ngFor="let imgUrl of imgUrls;index as i">
+            <section class="img-upload" ngModelGroup="imgUrlMap" *ngFor="let number of numbers;index as i"
+                #imgUpload="ngModelGroup">
                 <label>
-                    <p>Upload Image</p>
-                    <input type="file" hidden [(ngModel)]="imgUrls[i]" name="i">
+                    <p>{{imgUpload.value[i] ? 'Image Uploaded':'Upload Image' }}</p>
+                    <input type="file" hidden ngModel [name]="'' + i">
                 </label>
             </section>
         </section>
@@ -47,7 +48,7 @@
                 <h4>Amenities</h4>
                 <div class="stay-amenition" ngModelGroup="amenitieMap">
                     <div *ngFor="let amenitie of amenities" class="amenition-item">
-                        <input  type="checkbox" [id]="amenitie" ngModel [name]="amenitie" [value]="amenitie">
+                        <input type="checkbox" [id]="amenitie" ngModel [name]="amenitie" [value]="amenitie">
                         <label [for]="amenitie">{{amenitie}}</label>
                     </div>
                 </div>
