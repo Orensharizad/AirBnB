@@ -45,7 +45,6 @@ export class StayDetailsComponent implements OnInit, OnDestroy {
       })
     }
 
-    console.log('this.center:', this.center)
   }
 
 

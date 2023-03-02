@@ -22,6 +22,12 @@ import { StayEditComponent } from './views/stay-edit/stay-edit.component'
 import { ProfileModalComponent } from './cmps/profile-modal/profile-modal.component'
 import { ToastrModule } from 'ngx-toastr'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { DetailsReserveComponent } from './cmps/details-reserve/details-reserve.component'
+import { GuestModalComponent } from './cmps/guest-modal/guest-modal.component'
+import { AirbnbCalendarModule } from 'ngx-airbnb-calendar';
+import { GoogleMapsModule } from '@angular/google-maps'
+
+
 
 @NgModule({
   declarations: [
@@ -41,6 +47,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     LoginSignupComponent,
     StayEditComponent,
     ProfileModalComponent,
+    DetailsReserveComponent,
+    GuestModalComponent
   ],
   imports: [
     BrowserModule,
@@ -48,6 +56,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     FormsModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    AirbnbCalendarModule,
+    GoogleMapsModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
