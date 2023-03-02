@@ -27,25 +27,22 @@
             <details-amenities [stay]="stay"></details-amenities>
         </div>
         <div class="sub-content">
-            <div class="reserve-container">
-                <div class="reserve-header ">
-                    <div class="price ">
-                        <h3>{{stay.price}}$</h3> <span>nigth</span>
-                    </div>
-                    <div class="rate ">
-                        <i class="fa-solid fa-xs fa-star"></i>
-                        <p>{{stay.statReviews.Value}}</p>
-                        <span>{{stay.reviews.length}}reviews</span>
-                    </div>
-                </div>
-
-            </div>
+            <details-reserve [stay]="stay"></details-reserve>
 
         </div>
     </section>
     <section class="reviews">
         <details-review-stat [stay]="stay"></details-review-stat>
         <details-reviews [stay]="stay"></details-reviews>
+    </section>
+
+    <section class="maps">
+        <h3 class="maps-title">Where you'll be</h3>
+        <google-map height="480px" width="100%" [center]="center" [zoom]="zoom" (mapClick)="moveMap($event)"
+            (mapMousemove)="move($event)">
+            <map-marker *ngFor="let markerPosition of markerPositions" [position]="markerPosition"
+                [options]="markerOptions"></map-marker>
+        </google-map>
     </section>
 
 </section>

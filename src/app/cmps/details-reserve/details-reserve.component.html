@@ -1,0 +1,79 @@
+<div class="reserve-container">
+    <div class="reserve-header ">
+        <div class="price ">
+            <h3>{{stay.price}}$</h3> <span>nigth</span>
+        </div>
+        <div class="rate ">
+            <i class="fa-solid fa-xs fa-star"></i>
+            <p>{{stay.statReviews.Value}}</p>
+            <span>{{stay.reviews.length}} reviews</span>
+        </div>
+    </div>
+    <form class="date-container">
+        <label for="calender" class="check-in">
+            <p>check-in</p>
+            <span>{{checkIn | date}}</span>
+            <input (click)="onSetDate()" id="calender" type="text" [(ngModel)]="date" name="date" airbnb-calendar
+                [options]="options" />
+        </label>
+        <label for="calender" class="check-out">
+            <p>check-out</p>
+            <span>{{checkOut | date}}</span>
+        </label>
+        <div (click)="isShowGuestModal=!isShowGuestModal" class="guests">
+            <p>guests</p>
+            <guest-modal *ngIf="isShowGuestModal"></guest-modal>
+            <i *ngIf="isShowGuestModal" class="fa-solid fa-chevron-up"></i>
+            <i *ngIf="!isShowGuestModal" class="fa-solid fa-chevron-down"></i>
+        </div>
+    </form>
+
+    <button class="btn-reserve">Reserve</button>
+    <p class="reserve-txt">You won't be charged yet</p>
+    <div class="price-container">
+        <div class="price-line">
+            <span class="price-item">${{stay.price}} X {{GetTotalDays}} nights</span>
+            <span>${{Price}} </span>
+        </div>
+        <div class="price-line">
+            <span class="price-item">Cleaning fee</span>
+            <span>${{CleanTax}}</span>
+        </div>
+        <div class="price-line">
+            <span class="price-item">Service fee</span>
+            <span>${{ServiceFee}} </span>
+        </div>
+    </div>
+
+    <div class="total ">
+        <span>Total</span>
+        <span>${{TotalPrice}}</span>
+
+    </div>
+
+
+    <!-- <div class="guest-modal"> -->
+    <!-- <div *ngFor="let guest of guests" class="flex align-center space"> -->
+    <!-- <div class="title"> -->
+    <!-- <h3>{{guest.type}}</h3> -->
+    <!-- <span>{{guest.desc}}</span> -->
+    <!-- </div> -->
+    <!-- <div class="btns-contianer flex gap-5 align-center"> -->
+    <!-- <button ><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" -->
+    <!-- aria-hidden="true" role="presentation" focusable="false" -->
+    <!-- style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"> -->
+    <!-- <path d="m2 16h28"></path> -->
+    <!-- </svg></button> -->
+    <!-- <span>{{guest.count}}</span> -->
+    <!-- <button ><svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" -->
+    <!-- aria-hidden="true" role="presentation" focusable="false" -->
+    <!-- style="display: block; fill: none; height: 12px; width: 12px; stroke: currentcolor; stroke-width: 5.33333; overflow: visible;"> -->
+    <!-- <path d="m2 16h28m-14-14v28"></path> -->
+    <!-- </svg> -->
+    <!-- </button> -->
+    <!-- </div> -->
+    <!-- </div> -->
+    <!-- </div> -->
+
+
+</div>

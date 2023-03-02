@@ -1,7 +1,6 @@
 @import 'ngx-toastr/toastr';
 
 
-
 // // setup
 @import "./assets/styles/setup/variables";
 @import "./assets/styles/setup/functions";
@@ -12,3 +11,21 @@
 @import "./assets/styles/basics/base";
 @import "./assets/styles/basics/helpers";
 @import "./assets/styles/basics/layout";
+
+
+.reserve-container {
+    .airbnb-calendar-container {
+        left: -312px !important;
+        right: 0 !important;
+        border-radius: 8px !important;
+        height: 330px !important;
+        top: 5px !important;
+        width: 650px !important;
+    }
+
+    .airbnb-calendar {
+        .calendar {
+            padding: 20px !important;
+        }
+    }
+}

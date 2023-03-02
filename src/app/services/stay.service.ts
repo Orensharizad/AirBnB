@@ -53,7 +53,7 @@ export class StayService {
   public setFilter(stayFilter: StayFilter) {
     this._stayFilter$.next(stayFilter)
     this.query()
-}
+  }
 
   private _add(stay: Stay) {
     stay._id = this.utilService.makeId()
@@ -73,5 +73,14 @@ export class StayService {
     return of(stay)
   }
 
-  
+  public _getRandomDate() {
+    const month = this.utilService.getRandomIntInclusive(0, 11)
+    const startDay = this.utilService.getRandomIntInclusive(0, 30)
+    const endDay = this.utilService.getRandomIntInclusive(startDay, 30)
+    console.log(new Date(2023, month, startDay))
+
+
+  }
+
+
 }

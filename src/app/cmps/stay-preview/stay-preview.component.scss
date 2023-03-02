@@ -6,13 +6,27 @@
     cursor: pointer;
     position: relative;
 
-    .like{
+    .like {
         z-index: 2;
         position: absolute;
         top: 4%;
         right: 4%;
-        i{
+
+        i {
             font-size: 1.25em;
+        }
+
+
+        &.is-like {
+            path {
+                fill: red;
+            }
+        }
+
+        &:hover {
+            svg {
+                scale: 1.1;
+            }
         }
     }
 

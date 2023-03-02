@@ -16,11 +16,26 @@ export class StayPreviewComponent implements OnInit {
   @Input() stay!: Stay
   @Output() remove = new EventEmitter<string>()
 
+  isLike: boolean = false
+
   ngOnInit(): void {
     // console.log('stay:', this.stay)
   }
+
+  toggleIsLike(ev: MouseEvent) {
+    ev.stopPropagation()
+    this.isLike = !this.isLike
+
+  }
   onNavigate() {
     this.router.navigate(['/stay', this.stay._id])
+  }
+
+  get styleClass() {
+    return {
+      'like': true,
+      'is-like': this.isLike,
+    }
   }
 
 

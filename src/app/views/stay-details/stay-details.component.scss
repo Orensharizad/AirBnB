@@ -110,7 +110,6 @@
 
     .reviews {
         padding: 32px 0;
-        border-bottom: 1px solid #dddddd;
         border-top: 1px solid #dddddd;
     }
 
@@ -118,52 +117,15 @@
         width: 40%;
         position: relative;
 
-        .reserve-container {
-            position: sticky;
-            margin-left: 8.3333333333%;
-            border: 1px solid rgb(221, 221, 221);
-            border-radius: 12px;
-            padding: 24px;
-            position: sticky;
-            top: 128px;
-            box-shadow: #0000001f 0 6px 16px;
-            max-width: 400px;
+    }
 
-            .reserve-header {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
+    .maps {
+        margin-bottom: 20px;
 
-                .price {
-                    font-size: 22px;
-                    display: flex;
-                    align-items: center;
-                    gap: 3px;
-
-                    span {
-                        font-size: 1rem;
-                    }
-
-                }
-
-                .rate {
-                    display: flex;
-                    align-items: center;
-                    gap: 5px;
-                    font-size: 14px;
-                    font-weight: 600;
-
-                    span {
-                        color: $clr2;
-                        text-decoration: underline;
-                    }
-                }
-            }
-
-         
+        .maps-title {
+            margin-bottom: 20px;
+            font-size: 22px;
+            font-weight: bold;
         }
-
-
-
     }
 }
