@@ -35,7 +35,9 @@ export class DetailsReserveComponent {
 
 
   get GetTotalDays() {
-    return this.checkOut.getDate() - this.checkIn.getDate()
+      let difference = this.checkOut.getTime() - this.checkIn.getTime();
+      let TotalDays = Math.ceil(difference / (1000 * 3600 * 24));
+      return TotalDays;
   }
 
   get Price() {
@@ -53,14 +55,6 @@ export class DetailsReserveComponent {
   get TotalPrice() {
     return (+this.Price + +this.CleanTax + +this.ServiceFee)
   }
-  onAddChildren() {
-    this.children++
-  }
-  onRremoveChildren() {
-    if (this.children === 0) return
-    this.children--
-  }
-
 
   onSetDate() {
     if (this.date) {
@@ -68,7 +62,6 @@ export class DetailsReserveComponent {
       this.checkIn = new Date(dates[0])
       this.checkOut = new Date(dates[1])
     }
-
 
   }
 

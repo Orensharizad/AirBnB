@@ -1,61 +1,61 @@
-<main>
-    <form #form="ngForm" (ngSubmit)="onSubmit(form)">
-        <h2>
-            <input name="name" placeholder="Stay name" />
-        </h2>
-        <div ngModelGroup="loc" class="loc">
-            <label>
-                <input ngModel name="country" placeholder="Enter country" />
-            </label>
-            <label>
-                <input ngModel name="city" placeholder="Enter city" />
-            </label>
-            <label>
-                <input ngModel name="address" placeholder="Enter address" />
-            </label>
-        </div>
-        <section class="imgs-container">
-            <section class="img-upload" ngModelGroup="imgUrlMap" *ngFor="let number of numbers;index as i"
-                #imgUpload="ngModelGroup">
-                <label>
-                    <p>{{imgUpload.value[i] ? 'Image Uploaded':'Upload Image' }}</p>
-                    <input type="file" hidden ngModel [name]="'' + i">
-                </label>
-            </section>
-        </section>
-        <div class="below-imgs">
-            <div class="stay-details">
-                <label>
-                    Capacity
-                    <input ngModel name="capacity" placeholder="" />
-                </label>
-                <label>Stay type:
-                    <select ngModel name="roomType">
-                        <option value="Entire place">Entire place</option>
-                        <option value="Private room">Private room</option>
-                        <option value="Shared room">Shared room</option>
-                    </select>
-                </label>
-                <label>Price:
-                    <input ngModel name="price" type="text">/night
-                </label>
-            </div>
-            <div class="desc">
-                <h3>Description</h3>
-                <textarea ngModel name="summary"></textarea>
-            </div>
-            <div class="amenition-container">
-                <h4>Amenities</h4>
-                <div class="stay-amenition" ngModelGroup="amenitieMap">
-                    <div *ngFor="let amenitie of amenities" class="amenition-item">
-                        <input type="checkbox" [id]="amenitie" ngModel [name]="amenitie" [value]="amenitie">
-                        <label [for]="amenitie">{{amenitie}}</label>
-                    </div>
-                </div>
-            </div>
-            <div align="end">
-                <button class="submit-btn" type="submit">Save</button>
-            </div>
-        </div>
-    </form>
-</main>
+<!-- <main> -->
+<!-- <form #form="ngForm" (ngSubmit)="onSubmit(form)"> -->
+<!-- <h2> -->
+<!-- <input name="name" placeholder="Stay name" /> -->
+<!-- </h2> -->
+<!-- <div ngModelGroup="loc" class="loc"> -->
+<!-- <label> -->
+<!-- <input ngModel name="country" placeholder="Enter country" /> -->
+<!-- </label> -->
+<!-- <label> -->
+<!-- <input ngModel name="city" placeholder="Enter city" /> -->
+<!-- </label> -->
+<!-- <label> -->
+<!-- <input ngModel name="address" placeholder="Enter address" /> -->
+<!-- </label> -->
+<!-- </div> -->
+<!-- <section class="imgs-container"> -->
+<!-- <section class="img-upload" ngModelGroup="imgUrlMap" *ngFor="let number of numbers;index as i" -->
+<!-- #imgUpload="ngModelGroup"> -->
+<!-- <label> -->
+<!-- <p>{{imgUpload.value[i] ? 'Image Uploaded':'Upload Image' }}</p> -->
+<!-- <input type="file" hidden ngModel [name]="'' + i"> -->
+<!-- </label> -->
+<!-- </section> -->
+<!-- </section> -->
+<!-- <div class="below-imgs"> -->
+<!-- <div class="stay-details"> -->
+<!-- <label> -->
+<!-- Capacity -->
+<!-- <input ngModel name="capacity" placeholder="" /> -->
+<!-- </label> -->
+<!-- <label>Stay type: -->
+<!-- <select ngModel name="roomType"> -->
+<!-- <option value="Entire place">Entire place</option> -->
+<!-- <option value="Private room">Private room</option> -->
+<!-- <option value="Shared room">Shared room</option> -->
+<!-- </select> -->
+<!-- </label> -->
+<!-- <label>Price: -->
+<!-- <input ngModel name="price" type="text">/night -->
+<!-- </label> -->
+<!-- </div> -->
+<!-- <div class="desc"> -->
+<!-- <h3>Description</h3> -->
+<!-- <textarea ngModel name="summary"></textarea> -->
+<!-- </div> -->
+<!-- <div class="amenition-container"> -->
+<!-- <h4>Amenities</h4> -->
+<!-- <div class="stay-amenition" ngModelGroup="amenitieMap"> -->
+<!-- <div *ngFor="let amenitie of amenities" class="amenition-item"> -->
+<!-- <input type="checkbox" [id]="amenitie" ngModel [name]="amenitie" [value]="amenitie"> -->
+<!-- <label [for]="amenitie">{{amenitie}}</label> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- <div align="end"> -->
+<!-- <button class="submit-btn" type="submit">Save</button> -->
+<!-- </div> -->
+<!-- </div> -->
+<!-- </form> -->
+<!-- </main> -->
